@@ -1,0 +1,284 @@
+body { font-family: 'Inter', sans-serif; }
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #64748b; border-radius: 4px; }
+
+/* Smooth scrolling with offset for sticky header */
+html { scroll-behavior: smooth; }
+[id^="sec-"] { scroll-margin-top: 160px; }
+
+input, textarea, select { border-color: #94a3b8; outline: none; transition: all 0.2s; }
+input:focus, textarea:focus, select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); }
+
+/* Rich Text Output Styles */
+.rich-output {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #334155;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    min-height: 24rem;
+    overflow-y: auto;
+    white-space: pre-wrap; 
+}
+.rich-output b { font-weight: 800; color: #0f172a; }
+.rich-output u { text-decoration: underline; }
+
+/* Buttons */
+.std-btn { transition: all 0.1s; border-color: #cbd5e1; background-color: #f8fafc; color: #334155; }
+.std-btn:hover { background-color: #e2e8f0; }
+.std-btn.active { background-color: #2563eb; color: white; border-color: #1d4ed8; font-weight: 800; }
+
+.lr-btn { transition: all 0.1s; }
+.lr-btn.active { background-color: #0284c7; color: white; font-weight: bold; border-color: #0284c7; }
+.lr-btn.active[data-s="L"], .lr-btn.active[data-s="R"], .lr-btn.active[data-s="Both"] { background-color: #dc2626; border-color: #b91c1c; }
+.lr-btn.active[data-s="None"] { background-color: #16a34a; border-color: #15803d; }
+
+.injury-btn { transition: all 0.1s; background-color: white; border-color: #cbd5e1; color: #475569; }
+.injury-btn:hover { background-color: #fef2f2; }
+.injury-btn.active { background-color: #dc2626; color: white; border-color: #b91c1c; font-weight: bold; }
+
+#btnNoInjurySites.none-active { background-color: #16a34a; color: white; border-color: #15803d; }
+
+.ph-btn { transition: all 0.1s; background-color: #f8fafc; border-color: #cbd5e1; color: #334155; }
+.ph-btn:hover { background-color: #ecfdf5; }
+.ph-btn.active { background-color: #059669; color: white; border-color: #047857; font-weight: 800; }
+
+.drug-btn { transition: all 0.1s; background-color: #f8fafc; border-color: #cbd5e1; color: #334155; }
+.drug-btn:hover { background-color: #f3e8ff; }
+.drug-btn.active { background-color: #7e22ce; color: white; border-color: #6b21a8; font-weight: 800; }
+
+.treat-btn { transition: all 0.1s; background-color: #f8fafc; border-color: #cbd5e1; color: #334155; }
+.treat-btn:hover { background-color: #fef2f2; }
+.treat-btn.active { background-color: #b91c1c; color: white; border-color: #991b1b; font-weight: 800; }
+
+.treat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+.treat-chip .time { font-family: monospace; color: #b91c1c; font-size: 0.7rem; margin-left: 2px; }
+.treat-chip button { width: 26px; height: 26px; min-width: 26px; display: inline-flex; align-items: center; justify-content: center; margin-left: 6px; color: #b91c1c; padding: 0; font-size: 1.05rem; border-radius: 50%; opacity: 0.8; }
+.treat-chip button:hover { background: #fecaca; opacity: 1; }
+
+.treat-btn-none { transition: all 0.1s; background-color: #f1f5f9; border-color: #94a3b8; color: #334155; font-style: italic; }
+.treat-btn-none:hover { background-color: #e2e8f0; }
+
+.phrase-btn { transition: all 0.1s; background-color: #f8fafc; border: 1px dashed #94a3b8; color: #475569; font-size: 0.75rem; padding: 6px 10px; border-radius: 6px; }
+.phrase-btn:hover { background-color: #e2e8f0; }
+.phrase-btn:active { background-color: #cbd5e1; }
+.phrase-btn-none { border-style: solid; border-color: #64748b; color: #1e293b; font-weight: 800; background-color: #e2e8f0; }
+.phrase-btn-none:hover { background-color: #cbd5e1; }
+
+.preset-btn { transition: all 0.1s; font-size: 0.65rem; padding: 4px 8px; border-radius: 5px; background: #fef9c3; border: 1px solid #fde68a; color: #92400e; font-weight: 700; }
+.preset-btn:hover { background: #fde68a; }
+
+#dept-clock { position: fixed; top: 0.5rem; right: 0.5rem; z-index: 100; background: #0f172a; color: white; padding: 0.4rem 0.75rem; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); border: 1px solid #334155; text-align: center; line-height: 1.15; }
+#dept-clock .dc-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.03em; color: #94a3b8; font-weight: 700; }
+#dept-clock .dc-value { font-size: 1.1rem; font-weight: 800; font-family: 'SFMono-Regular', Consolas, monospace; }
+@media print { #dept-clock, #undo-toast, .quick-toggle-btn { display: none !important; } }
+
+.quick-toggle-btn { font-size: 0.65rem; font-weight: 700; color: #0891b2; background: none; border: none; padding: 2px 4px; text-transform: uppercase; letter-spacing: 0.02em; cursor: pointer; }
+.quick-toggle-btn:hover { text-decoration: underline; }
+
+.trend-arrow { font-size: 0.9rem; font-weight: 800; margin-left: 2px; }
+
+#undo-toast { animation: undo-toast-in 0.15s ease-out; }
+@keyframes undo-toast-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+.access-btn { transition: all 0.1s; background-color: white; border-color: #fecaca; color: #b91c1c; position: relative; }
+.access-btn:hover { background-color: #fef2f2; }
+.access-btn.active { background-color: #dc2626; color: white; border-color: #991b1b; font-weight: 800; }
+
+.disp-btn { transition: all 0.1s; background-color: white; border-color: #c7d2fe; color: #4338ca; }
+.disp-btn:hover { background-color: #eef2ff; }
+.disp-btn.active { background-color: #4f46e5; color: white; border-color: #3730a3; font-weight: 800; }
+
+/* Visual Feedback for Secondary Survey Checkboxes */
+.tag-checkbox:checked + span {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-color: #fca5a5;
+    font-weight: 800;
+}
+
+/* Time Button */
+.time-btn {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #e2e8f0;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    cursor: pointer;
+    margin-left: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    transition: all 0.2s;
+}
+.time-btn:hover { background: #cbd5e1; }
+.time-btn.recorded { background: #dcfce7; color: #166534; border-color: #86efac; font-weight: bold; }
+
+/* Nav Link Styles */
+.nav-link {
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.375rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.1s;
+    border: 1px solid transparent;
+    color: #475569;
+}
+.nav-link:hover { background-color: #e2e8f0; color: #0f172a; }
+
+/* Specific Color Navs */
+.nav-link.nav-a { color: #1d4ed8; background: #eff6ff; border-color: #dbeafe; } .nav-link.nav-a:hover { background: #2563eb; color: white; }
+.nav-link.nav-b { color: #0369a1; background: #f0f9ff; border-color: #e0f2fe; } .nav-link.nav-b:hover { background: #0ea5e9; color: white; }
+.nav-link.nav-c { color: #b91c1c; background: #fef2f2; border-color: #fee2e2; } .nav-link.nav-c:hover { background: #dc2626; color: white; }
+.nav-link.nav-d { color: #a16207; background: #fefce8; border-color: #fef9c3; } .nav-link.nav-d:hover { background: #eab308; color: white; }
+.nav-link.nav-e { color: #15803d; background: #f0fdf4; border-color: #dcfce7; } .nav-link.nav-e:hover { background: #16a34a; color: white; }
+.nav-link.nav-sec { color: #4338ca; background: #eef2ff; border-color: #e0e7ff; } .nav-link.nav-sec:hover { background: #4f46e5; color: white; }
+
+/* Chip Style for Specialties */
+.spec-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: #e2e8f0;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+}
+.spec-chip span.time { font-family: monospace; color: #64748b; font-size: 0.7rem; margin-left: 2px; }
+.spec-chip button { width: 26px; height: 26px; min-width: 26px; display: inline-flex; align-items: center; justify-content: center; margin-left: 6px; color: #94a3b8; padding: 0; font-size: 1.05rem; border-radius: 50%; }
+.spec-chip button:hover { background: #cbd5e1; color: #ef4444; }
+
+.ph-drug-time-edit {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: #6b21a8;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #d8b4fe;
+    width: 3.4rem;
+    margin-left: 2px;
+    padding: 0 2px;
+}
+
+/* NEWS2 score badges */
+.news2-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+.news2-badge.news2-low { background: #dcfce7; color: #166534; }
+.news2-badge.news2-medium { background: #fef3c7; color: #92400e; }
+.news2-badge.news2-high { background: #fee2e2; color: #991b1b; }
+
+/* Arrival time editable input inside the green button */
+.arrival-time-edit {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.7);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0 4px;
+    cursor: pointer;
+    outline: none;
+    width: 6rem;
+}
+.arrival-time-edit::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+
+/* ===== PRINT STYLESHEET ===== */
+@media print {
+  /* Print only the two generated notes */
+  body { background: white !important; padding: 0 !important; }
+  header, #form-col, #dept-clock, #undo-toast, #resume-modal, .edited-banner, button { display: none !important; }
+  main { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+  main > .grid { display: block !important; }
+  #notes-col, #notes-col > div { position: static !important; width: 100% !important; }
+  #notes-col section { box-shadow: none !important; border: none !important; padding: 0 !important; }
+
+  #initialNoteOutput,
+  #secondaryNoteOutput {
+    display: block !important;
+    min-height: 0 !important;
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+    font-family: Arial, sans-serif !important;
+    color: black !important;
+    background: white !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 24pt !important;
+    overflow: visible !important;
+  }
+
+  /* Force page break between primary and secondary notes */
+  #notes-col section + section { page-break-before: always; }
+
+  b { font-weight: bold !important; }
+}
+
+/* Manual-edit lock banner on the note panels */
+.edited-banner { margin-bottom: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 0.5rem; background: #fef3c7; border: 2px solid #d97706; color: #78350f; font-size: 0.75rem; font-weight: 800; }
+.regen-btn { margin-left: 4px; text-decoration: underline; color: #b45309; font-weight: 800; }
+
+/* Secondary survey per-area Normal toggle */
+.ss-normal-btn { font-size: 0.7rem; font-weight: 800; padding: 2px 10px; border-radius: 5px; border: 2px solid #86efac; background: #f0fdf4; color: #166534; }
+.ss-normal-btn.active { background: #16a34a; border-color: #15803d; color: white; }
+
+/* Keep the fixed dept clock clear of the header on narrow screens */
+@media (max-width: 640px) { header > .container { padding-right: 6.5rem; } }
+
+/* Blood Product Buttons (MHP running list) */
+.blood-btn {
+    transition: all 0.1s;
+    background-color: white;
+    border: 2px solid #fecaca;
+    color: #b91c1c;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 0.6rem 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+.blood-btn:hover { background-color: #fef2f2; }
+.blood-btn:active { transform: scale(0.97); }
+
+/* Chip style for the running blood product list (mirrors .spec-chip) */
+.blood-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+.blood-chip span.time { font-family: monospace; color: #b91c1c; font-size: 0.7rem; margin-left: 2px; }
+.blood-chip button { margin-left: 4px; color: #b91c1c; padding: 2px; border-radius: 50%; }
+.blood-chip button:hover { background: #fca5a5; color: #7f1d1d; }
